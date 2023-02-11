@@ -8,11 +8,12 @@ const {adminAuthentication} = require('../middleware/adminAuth')
 const {studentAuthentication} = require('../middleware/studentAuth')
 const {adminValidation,adminLoginValidations} = require('../validations/adminValidation')
 const {studentValidations,studentLoginValidations} = require('../validations/studentValidations')
+const {questionsValidations} = require('../validations/questionValidations')
 // admin api-------------
 router.post('/createAdmin',adminValidation,createAdmin)
 router.post('/loginAdmin',adminLoginValidations,loginAdmin)
 
-router.post('/createQuestion',adminAuthentication,createQuestions)
+router.post('/createQuestion',adminAuthentication,questionsValidations,createQuestions)
 router.get('/getQuestions',adminAuthentication,getQuestionsByAdmin)
 router.put('/updateQuestion/:questionId',adminAuthentication,updateQuestion)
 
