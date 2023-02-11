@@ -21,7 +21,7 @@ const questionSchema = new mongoose.Schema({
     },
     mark:{
         type: String
-    },
+    }
 
 },{timestamps:true});
 module.exports = mongoose.model("Question", questionSchema)
